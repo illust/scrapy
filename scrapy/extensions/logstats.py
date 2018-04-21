@@ -45,7 +45,7 @@ class LogStats(object):
                "scraped %(items)d items (at %(itemrate)d items/min)")
         log_args = {'pages': pages, 'pagerate': prate,
                     'items': items, 'itemrate': irate}
-        logger.info(msg, log_args, extra={'spider': spider})
+        logger.critical(msg, log_args, extra={'spider': spider})
 
     def spider_closed(self, spider, reason):
         if self.task and self.task.running:
